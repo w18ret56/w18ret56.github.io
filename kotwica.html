@@ -7,7 +7,10 @@
 		<!-- LOAD Tone.js from unpkg -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
 		<script>
-			var bumper = null; 
+			var bumper = null;
+			function stopPlay(){
+				clearInterval(bumper)
+			}
 			function playNote() {
           var interwal = parseInt(document.getElementsByName("interwal")[0].value) * 1000;
           var czas_trwania = parseInt(document.getElementsByName("trwanie")[0].value);
@@ -51,11 +54,11 @@ Czas wygasania - po jakim czasie aplikacja ma zaprzestać działania
 <a href="https://discord.gg/b3jKaEM">Discord</a>
 </pre>
     
-    Interwał: <input type="number" name="interwal" value="3">
+    Interwał: <input type="number" name="interwal" value="5">
     <br />
     Czas trwania: <input type="number" name="trwanie" value="1"><br />
     Czas wygasania: <input type="number" name="wygasanie" value=3600><br />
-    <button onclick="playNote()">Start</button>
+    <button onclick="playNote()">Start</button><button onclick="stopPlay()">Zatrzymaj</button>
     <br />
     <br />
 	</body>
