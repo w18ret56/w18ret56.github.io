@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>	
+		<meta charset="utf-8" />
+		<title>Simple HTML</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- LOAD Tone.js from unpkg -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
+		<script>
+			function playNote() {
+          var interwal = parseInt(document.getElementsByName("interwal")[0].value) * 1000;
+          var czas_trwania = parseInt(document.getElementsByName("trwanie")[0].value);
+          var czas_wygasniecia = parseInt(document.getElementsByName("wygasanie")[0].value) * 1000;
+        console.log(interwal);
+        console.log(czas_trwania);
+        console.log(czas_wygasniecia);
+        var bumper = setInterval(function(){
+				// create a synth
+				const synth = new Tone.Synth().toDestination();
+          const now = Tone.now()
+				// play a note from that synth
+				synth.triggerAttackRelease("C4", czas_trwania);
+        },interwal);
+        setTimeout(function(){
+          clearInterval(bumper)
+        },czas_wygasniecia)
+			}
+          
+		</script>
+
+	</head>
+	<body>
+		<h1>Kotwica WILD</h1>
+    <pre style="color: red;">Czas podawany jest w sekundach</pre>
+    Interwał: <input type="number" name="interwal" value="3">
+    <br />
+    Czas trwania: <input type="number" name="trwanie" value="1"><br />
+    Czas wygasania: <input type="number" name="wygasanie" value=3600><br />
+    <button onclick="playNote()">Click me to play note!</button>
+    <br />
+    <br />
+	</body>
+</html>
