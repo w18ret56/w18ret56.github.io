@@ -7,6 +7,7 @@
 		<!-- LOAD Tone.js from unpkg -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
 		<script>
+			var bumper = null; 
 			function playNote() {
           var interwal = parseInt(document.getElementsByName("interwal")[0].value) * 1000;
           var czas_trwania = parseInt(document.getElementsByName("trwanie")[0].value);
@@ -14,7 +15,7 @@
         console.log(interwal);
         console.log(czas_trwania);
         console.log(czas_wygasniecia);
-        var bumper = setInterval(function(){
+        bumper = setInterval(function(){
 				// create a synth
 				const synth = new Tone.Synth().toDestination();
           const now = Tone.now()
