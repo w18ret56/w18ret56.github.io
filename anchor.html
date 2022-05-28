@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+	<head>	
+		<meta charset="utf-8" />
+		<title>WILD anchor by billusher</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- LOAD Tone.js from unpkg -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
+		<script>
+			var bumper = null;
+			function stopPlay(){
+				clearInterval(bumper)
+			}
+			function playNote() {
+          var interwal = parseInt(document.getElementsByName("interwal")[0].value) * 1000;
+          var czas_trwania = parseInt(document.getElementsByName("trwanie")[0].value);
+          var czas_wygasniecia = parseInt(document.getElementsByName("wygasanie")[0].value) * 1000;
+        console.log(interwal);
+        console.log(czas_trwania);
+        console.log(czas_wygasniecia);
+        bumper = setInterval(function(){
+				// create a synth
+				const synth = new Tone.Synth().toDestination();
+          const now = Tone.now()
+				// play a note from that synth
+				synth.triggerAttackRelease("C4", czas_trwania);
+        },interwal);
+        setTimeout(function(){
+          clearInterval(bumper)
+        },czas_wygasniecia)
+			}
+          
+		</script>
+
+	</head>
+	<body>
+		<h1>WILD anchor</h1>
+		<pre>
+Instrukcja
+1. Go to sleep and wake up after 4-6 hours
+2. Wake up for 30min - 1 hour, here you can set up program
+3. Go back to bed
+4. When signal beeps focus on it, after this try to fall asleep, repeat until you'll eventually enter the dream.
+Good luck!
+
+Settings
+Interval - what is time between every beep
+Beep length - length of the beep 
+Expire time - after what time aplication should turn off
+
+<pre style="color: red;">Time is in seconds</pre>
+<a href="https://discord.gg/b3jKaEM">Discord</a>
+</pre>
+    
+    Interval: <input type="number" name="interwal" value="5">
+    <br />
+    Beep length: <input type="number" name="trwanie" value="1"><br />
+    Expire time: <input type="number" name="wygasanie" value=3600><br />
+    <button onclick="playNote()">Start</button><button onclick="stopPlay()">Stop</button>
+    <br />
+    <br />
+	</body>
+</html>
