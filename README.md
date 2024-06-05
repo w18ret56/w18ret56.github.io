@@ -3,7 +3,7 @@
 
 ## Table of contents
 1. [The building of the dreams](DREAMS.md) <br />
-2. Lucid Dreming
+2. [Lucid Dreming](LUCID.md)
 3. [What is and science behind dream engineering](DREAMENG.md)
 4. Methods of dreams engineering
     - Sound
