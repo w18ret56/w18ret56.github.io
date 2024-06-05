@@ -8,7 +8,7 @@ Dream engineering is a process of influencing the dreams by using external stimu
 
 ## FAQ
 ### Isn't it some kind of pseudoscience?
-No, 
+No, there are scientific research about lucid dreaming and dream engineering, like article above and lucid dream research by [Lucidity Institute](http://www.lucidity.com/)
 
 ### Is it Lucid Dreaming?
 No, but DE could be useful in causing lucid dreams
