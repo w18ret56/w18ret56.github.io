@@ -5,7 +5,7 @@
 Dream engineering is a process of influencing the dreams by using external stimuli (sound, visual, temperature, somatosensation (touch & pressure) and olifactory (smell)) 
 
 ## Table of contents
-[1. The building of the dreams](DREAMS.md)
+[1. The building of the dreams](DREAMS.md) <br />
 2. Methods of dreams engineering
 
 
