@@ -4,12 +4,12 @@
       <script src="https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.js"></script>
   </head>
   <body>
-    <canvas id="cnv172"></canvas>
+    <canvas id="canvas"></canvas>
     <script type="text/javascript">
       async function main(){
         let pyodide = await loadPyodide();
         await pyodide.loadPackage("pillow")
-        let sdl2Canvas = document.getElementById("cnv172");
+        let sdl2Canvas = document.getElementById("canvas");
         pyodide.canvas.setCanvas2D(sdl2Canvas);
         await pyodide.runPython(`
         from PIL import Image, ImageDraw 
