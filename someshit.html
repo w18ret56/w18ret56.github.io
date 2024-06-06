@@ -4,10 +4,22 @@
       <script src="https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.js"></script>
   </head>
   <body>
+    <canvas id="cnv172"></canvas>
     <script type="text/javascript">
       async function main(){
         let pyodide = await loadPyodide();
-        console.log(pyodide.runPython("1 + 2"));
+        let sdl2Canvas = document.getElementById("cnv172");
+        pyodide.canvas.setCanvas2D(sdl2Canvas);
+        await pyodide.runPython(`
+        from PIL import Image, ImageDraw 
+        img = Image.new(mode="RGB", size=(200, 200))
+        draw = ImageDraw.Draw(img)
+        draw.rectangle(xy = (50, 50, 150, 150), 
+               fill = (0, 127, 0), 
+               outline = (255, 255, 255), 
+               width = 5) 
+        img.show()
+        `)
       }
       main();
     </script>
