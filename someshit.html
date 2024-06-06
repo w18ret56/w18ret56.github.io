@@ -9,7 +9,7 @@
       async function main(){
         let pyodide = await loadPyodide();
         await pyodide.loadPackage("pillow")
-        await pyodide.loadPackage("math")
+        //await pyodide.loadPackage("math")
         let sdl2Canvas = document.getElementById("canvas");
         pyodide.canvas.setCanvas2D(sdl2Canvas);
         await pyodide.runPython(`
