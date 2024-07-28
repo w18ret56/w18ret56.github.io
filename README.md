@@ -1,3 +1,3 @@
-[Dream Engineering](/dreamengineering) <br />
-[EEG](/eeg) <br />
-[Brain chemistry](/brainchemistry) <br />
+* [Dream Engineering](/dreamengineering)
+* [EEG](/eeg)
+* [Brain chemistry](/brainchemistry)
